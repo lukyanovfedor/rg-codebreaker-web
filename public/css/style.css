@@ -1,0 +1,284 @@
+body {
+	font-family: "Open Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+	width: 740px;
+	margin: 0 auto;
+	padding: 20px 0 0;
+}
+
+.game {
+	float: left;
+	width: 350px;
+	margin: 0 40px 0 0;
+}
+
+.main-title {
+	padding: 0 0 2px;
+	border-bottom: 1px solid #1d1d1d;
+	font-size: 38px;
+	font-weight: 300;
+	text-indent: 15px;
+	color: #1d1d1d;
+	margin: 0 0 20px;
+}
+
+.code-try {
+	margin: 0 auto 20px;
+}
+
+.code-try .field {
+	float: left;
+	position: relative;
+	width: 80px;
+	margin: 0 10px 0 0;
+}
+
+.code-try .field:last-child {
+	margin: 0;
+}
+
+.code-try .field:before, .code-try .field:after {
+	content: '';
+	display: block;
+	width: 1px;
+	height: 3px;
+	background: #1d1d1d;
+	position: absolute;
+	bottom: 1px;
+}
+
+.code-try .field:before {
+	left: 0;
+}
+
+.code-try .field:after {
+	right: 0;
+}
+
+.code-try input {
+	width: 80px;
+	border: none;
+	border-bottom: 1px solid #1d1d1d;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 300;
+	padding: 0;
+	color: #1d1d1d;
+}
+
+.control {
+	width: 350px;
+	margin: 0 auto;
+}
+
+.control .btn {
+	float: left;
+	position: relative;
+	width: 78px;
+	height: 78px;
+	border: 1px solid #ddd;
+	color: #ddd;
+	margin: 0 10px 10px 0;
+	border-radius: 100%;
+	cursor: pointer;
+	line-height: 76px;
+	text-align: center;
+	font-size: 26px;
+}
+
+.control .btn.no-margin {
+	margin: 0 0 10px;
+}
+
+.control .btn:hover {
+	border-color: #1d1d1d;
+	color: #1d1d1d;
+}
+
+.control .btn.disabled:hover {
+	cursor: default;
+	border-color: #ddd;
+	color: #ddd;
+}
+
+.control .btn.remove-last .ico {
+	display: block;
+	position: absolute;
+	background: url('/i/remove.png') no-repeat 0 -30px;
+	width: 30px;
+	height: 20px;
+	left: 50%;
+	top: 50%;
+	margin: -10px 0 0 -17px;
+}
+
+.control .btn.remove-last:hover .ico {
+	background-position: 0 0;
+}
+
+.hints-tries {
+	width: 350px;
+	float: right;
+}
+
+.hints, .used {
+	border: 1px solid #1d1d1d;
+	color: #1d1d1d;
+	font-size: 15px;
+	padding: 10px 15px;
+	margin: 0 0 20px;
+}
+
+.hints > div {
+	margin: 0 0 10px;
+}
+
+.hints > div:last-child {
+	margin: 0;
+}
+
+.tries {
+	border: 1px solid #1d1d1d;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tries td, .tries th {
+	text-align: center;
+	width: 50%;
+	padding: 5px;
+	border: 1px solid #1d1d1d;
+}
+
+.game-over-overlay {
+	overflow: hidden;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.game-over {
+	background: #fff;
+	text-align: center;
+	padding: 25px 0;
+}
+
+.game-over h2 {
+	font-size: 24px;
+	color: #1d1d1d;
+	margin: 0 0 5px;
+}
+
+.game-over h3 {
+	font-size: 20px;
+	color: #1d1d1d;
+	margin: 0 0 20px;
+}
+
+.game-over .buttons > div {
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	line-height: 28px;
+	border: 1px solid #ddd;
+	color: #ddd;
+	margin: 0 10px 0 0;
+	font-size: 16px;
+	padding: 5px 20px;
+}
+
+.game-over .buttons > div:hover {
+	color: #1d1d1d;
+	border-color: #1d1d1d;
+}
+
+.game-over .buttons > div:last-child {
+	margin: 0;
+}
+
+.result {
+	color: #1d1d1d;
+}
+
+.result table {
+	width: 100%;
+	border: 1px solid #1d1d1d;
+	border-collapse: collapse;
+}
+
+.result table td, .result table th {
+	border: 1px solid #1d1d1d;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.result-empty {
+	text-align: left;
+	font-size: 22px;
+	color: #1d1d1d;
+	text-indent: 15px;
+	text-align: center;
+}
+
+.results-play {
+	cursor: pointer;
+	display: block;
+	height: 38px;
+	line-height: 36px;
+	border: 1px solid #ddd;
+	color: #ddd;
+	margin: 0 10px 0 0;
+	font-size: 16px;
+	width: 200px;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.results-play:hover {
+	color: #1d1d1d;
+	border-color: #1d1d1d;
+}
+
+.save-result {
+	margin: 20px 0 0;
+}
+
+.save-result input {
+	display: inline-block;
+	width: 155px;
+	margin: 0 10px 0 0;
+	height: 40px;
+	border: 1px solid #ddd;
+	color: #1d1d1d;
+	padding: 0 0 0 15px;
+}
+
+.save-result input:focus {
+	outline: none;
+	border-color: #1d1d1d;
+}
+
+.save-result a {
+	display: inline-block;
+	height: 40px;
+	line-height: 38px;
+	border: 1px solid #ddd;
+	color: #ddd;
+	font-size: 16px;
+	text-decoration: none;
+	width: 75px;
+}
+
+.save-result a:hover {
+	color: #1d1d1d;
+	border-color: #1d1d1d;
+}

@@ -1,0 +1,57 @@
+<div ng-if="rs.result.length" class="result">
+	<table>
+		<thead>
+			<th>
+				#
+			</th>
+
+			<th>
+				Name
+			</th>
+
+			<th>
+				Status
+			</th>
+
+			<th>
+				Used
+			</th>
+
+			<th>
+				Code
+			</th>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="r in rs.result">
+				<td>
+					{{ $index + 1}}
+				</td>
+
+				<td>
+					{{ r.name }}
+				</td>
+
+				<td>
+					{{ r.status }}
+				</td>
+
+				<td>
+					{{ r.used }}
+				</td>
+
+				<td>
+					{{ r.code }}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div ng-if="!rs.result.length" class="result-empty">
+	Results are empty. Play a little bit;)
+</div>
+
+<div class="results-play" ng-click="rs.newGame()">
+	New game
+</div>

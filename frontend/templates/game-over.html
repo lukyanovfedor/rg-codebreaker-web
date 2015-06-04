@@ -1,0 +1,17 @@
+<div class="game-over-overlay">
+	<div class="game-over btf-modal">
+		<h2>{{go.msg}}</h2>
+		<h3>Wanna save result?</h3>
+
+		<div class="buttons">
+			<div ng-click="showName = true">yes</div>
+			<div ng-click="go.startNew()">no, start new game</div>
+		</div>
+
+		<div class="save-result cf" ng-if="showName">
+			<input type="text" placeholder="Enter your name" ng-model="go.name" />
+
+			<a href="" ng-click="go.saveResult()">save</a>
+		</div>
+	</div>
+</div>

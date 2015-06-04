@@ -1,0 +1,101 @@
+<div class="cf">
+	<div class="game">
+		<div class="code-try cf" ng-init="isDisabled = true">
+			<div class="field">
+				<input type="text" disabled="{{isDisabled}}" ng-model="gm.code.value[0]" />
+			</div>
+
+			<div class="field">
+				<input type="text" disabled="{{isDisabled}}" ng-model="gm.code.value[1]" />
+			</div>
+
+			<div class="field">
+				<input type="text" disabled="{{isDisabled}}" ng-model="gm.code.value[2]" />
+			</div>
+
+			<div class="field">
+				<input type="text" disabled="{{isDisabled}}" ng-model="gm.code.value[3]" />
+			</div>
+		</div>
+
+		<div class="control cf">
+			<div class="btn number" ng-click="gm.code.set(1)">
+				1
+			</div>
+
+			<div class="btn number" ng-click="gm.code.set(2)">
+				2
+			</div>
+
+			<div class="btn number" ng-click="gm.code.set(3)">
+				3
+			</div>
+
+			<div class="btn number no-margin" ng-click="gm.code.set(4)">
+				4
+			</div>
+
+			<div class="btn number" ng-click="gm.code.set(5)">
+				5
+			</div>
+
+			<div class="btn number" ng-click="gm.code.set(6)">
+				6
+			</div>
+
+			<div class="btn remove-last" ng-click="gm.code.remove()">
+				<i class="ico"></i>
+			</div>
+
+			<div class="btn hint no-margin" ng-click="gm.hint.get()" ng-class="{disabled: !gm.hint.available}">
+				?
+			</div>
+		</div>
+	</div>
+
+	<div class="hints-tries">
+		<div class="used">
+			Left: {{ gm.code.attempts }}
+		</div>
+
+		<div class="hints">
+			<div ng-if="gm.hint.values.length">
+				Hint: <b>{{ gm.hint.values.join("") }}</b>
+			</div>
+
+			<div ng-if="gm.hint.available">
+				Hints available: <b>{{gm.hint.available}}</b>
+			</div>
+
+			<div ng-if="!gm.hint.available">
+				<b>All hints used</b>
+			</div>
+		</div>
+
+		<table class="tries">
+			<thead>
+				<tr>
+					<th>
+						Attempt
+					</th>
+
+					<th>
+						Result
+					</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="t in gm.code.tries">
+					<td>
+						{{t.attempt}}
+					</td>
+
+					<td>
+						{{t.result}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
