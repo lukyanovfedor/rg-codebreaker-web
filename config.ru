@@ -1,7 +1,5 @@
 require "./app/main"
 
-# app = Gipsy::Application::Codebreaker
-
 app = Rack::Builder.new do
   use Rack::Static, :urls => ["/css", "/i", "/js"], :root => "public"
   use Rack::Session::Cookie,
