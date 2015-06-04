@@ -10,16 +10,35 @@ module Gipsy
     end
 
     def status (status)
+      raise TypeError, "status must be an Fixnum" unless status.is_a? Fixnum
+
       @status = status
 
       self
     end
 
-    def set_cookie (name, value)
+    def cookie (name, value)
+      raise TypeError, "name must be a String" unless name.is_a? String
+      raise TypeError, "value must be a Hash" unless value.is_a? Hash
+
       @cookie << [name, value]
+
+      self
+    end
+
+    def header (name, value)
+      raise TypeError, "name must be a String" unless name.is_a? String
+      raise TypeError, "value must be a String" unless value.is_a? String
+
+      @headers[name] = value
+
+      self
     end
 
     def render (template, data = {})
+      raise TypeError, "template must be a String" unless template.is_a? String
+      raise TypeError, "data must be a Hash" unless data.is_a? Hash
+
       view = File.read(Dir.pwd + "/views/#{template}")
 
       if data.keys.empty?
@@ -34,7 +53,7 @@ module Gipsy
       unleash(view)
     end
 
-    def send (data)
+    def send (data = {})
       if data.is_a?(Hash) || data.is_a?(Array)
         data = JSON.generate(data)
 

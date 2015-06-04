@@ -14,5 +14,5 @@ app.router.post "/result" do |req, res|
     res.status(400)
   end
 
-  res.send({})
+  res.send()
 end

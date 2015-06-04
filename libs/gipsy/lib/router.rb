@@ -30,6 +30,14 @@ module Gipsy
     end
 
     def find_routes (method, path)
+      raise TypeError, "method must be a Symbol" unless method.is_a? Symbol
+      raise TypeError, "path must be a String" unless path.is_a? String
+
+      out = {
+        routes: [],
+        route_params: {}
+      }
+
       mathched_routes = []
       params = {}
 
@@ -41,19 +49,13 @@ module Gipsy
         matches = path.scan(r[:pattern]).flatten
 
         unless matches.empty?
-          mathched_routes << r
+          out[:routes] << r
 
-          r[:params].each_with_index do |p, i|
-            params[p.to_sym] = matches[i]
-          end
-
+          r[:params].each_with_index { |p, i| out[:route_params][p.to_sym] = matches[i] }
         end
       end
 
-      {
-        routes: mathched_routes,
-        route_params: params
-      }
+      out
     end
 
     private
